@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        button{
+            font-size: 150%;
+        }
+
+    </style>
+</head>
+<input type="text" id="ip"><br><br>
+<button onclick="Nhap(1)">1</button>
+<button onclick="Nhap(2)">2</button>
+<button onclick="Nhap(3)">3</button>
+<button onclick="Nhap('+')">+</button>
+<br>
+<button onclick="Nhap(4)">4</button>
+<button onclick="Nhap(5)">5</button>
+<button onclick="Nhap(6)">6</button>
+<button onclick="Nhap('-')">-</button>
+<br>
+<button onclick="Nhap(7)">7</button>
+<button onclick="Nhap(8)">8</button>
+<button onclick="Nhap(9)">9</button>
+<button onclick="Nhap('x')">x</button>
+<br>
+<button onclick="xoa()">AC</button>
+<button onclick="Nhap(0)">0</button>
+<button onclick="Tinh('=')">=</button>
+<button onclick="Nhap('/')">/</button>
+<button onclick="sqrt()">CB2</button>
+
+
+<body>
+<script>
+    function Nhap(data) {
+        console.log('nha', data)
+        document.getElementById('ip').value += data;
+    }
+    function Tinh() {
+        document.getElementById('ip').value = eval(document.getElementById('ip').value)
+        
+    }
+    function xoa() {
+        document.getElementById("ip").value = '';
+
+    }
+    function sqrt() {
+        document.getElementById('ip').value = Math.sqrt (eval(document.getElementById('ip').value));
+
+    }
+</script>
+
+</body>
+</html>

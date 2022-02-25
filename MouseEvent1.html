@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<img src="img.png" id="image1">
+<!--<p> Click button below to move the image to right</p>-->
+<!--<button  onclick="moveright()">Click right</button>-->
+<!--<button  onclick="moveleft()">click left</button>-->
+<!--<button  onclick="movedown()">click Top</button>-->
+<!--<button  onclick="moveup()">click Top</button>-->
+<!--<body>-->
+<script>
+    let img1 = document.getElementById('image1');
+    img1.style.position = 'relative';
+    img1.style.left = 0 + 'px';
+    img1.style.top = 0 + 'px';
+
+    function moveright() {
+        img1.style.left = parseInt(img1.style.left) + 10 + 'px';
+    }
+
+    function moveleft() {
+        img1.style.left = parseInt(img1.style.left) - 10 + 'px';
+    }
+
+    function movedown() {
+        img1.style.top = parseInt(img1.style.top) + 10 + 'px';
+
+    }
+
+    function moveup() {
+        img1.style.top = parseInt(img1.style.top) - 10 + 'px';
+    }
+
+    function moveLeftTop() {
+        img1.style.left = parseInt(img1.style.left) + 10 + 'px';
+        img1.style.top = parseInt(img1.style.top) + 10 + 'px';
+    }
+
+    function movetopleft() {
+        img1.style.left = parseInt(img1.style.left) - 10 + 'px';
+        img1.style.top = parseInt(img1.style.top) - 10 + 'px';
+    }
+    function moveLeftTop1() {
+        img1.style.left = parseInt(img1.style.left) + 10 + 'px';
+        img1.style.top = parseInt(img1.style.top) - 10 + 'px';
+    }
+    function movetopleft1() {
+        img1.style.left = parseInt(img1.style.left) - 10 + 'px';
+        img1.style.top = parseInt(img1.style.top) + 10 + 'px';
+    }
+
+    function moveWithkeyboard(evt) {
+        console.log(evt)
+        switch (evt.keyCode) {
+            case 37:
+                moveleft();
+                break;
+            case 38:
+                moveup();
+                break
+            case 39:
+                moveright();
+                break;
+            case 40 :
+                movedown()
+                break;
+            case 83:
+                moveLeftTop();
+                break;
+            case 87:
+                movetopleft();
+                break;
+            case 65:
+                movetopleft1();
+                break;
+            case 68:
+                moveLeftTop1();
+                break;
+        }
+
+    }
+
+    function doworking() {
+        addEventListener('keydown', moveWithkeyboard);
+
+    }
+
+    window.onload = doworking;
+</script>
+</body>
+</html>

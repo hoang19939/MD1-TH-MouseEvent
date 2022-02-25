@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bắt sự kiện từ bàn phím</title>
+</head>
+<h3 id="rs">
+
+</h3>
+Nhập cân nặng : <input type="text" id="wt"> <br><br>
+Nhập chiều Cao: <input type="text" id="ht">
+<button onclick="index()">click BMI</button>
+<body>
+<script>
+    function index() {
+        let inputwight = document.getElementById('wt').value;
+        let inputheight = document.getElementById('ht').value;
+        let bmi = inputwight / (inputheight ^ 2)
+        console.log('input', bmi)
+        let result = '';
+        if (bmi < 18) {
+            result = 'Underweight';
+        } else if (bmi < 25) {
+            result = 'Normal';
+        } else if (bmi < 30) {
+            result = 'Overweight';
+        }else {
+            result = 'Obese'
+        }
+        document.getElementById('rs').innerHTML = bmi + '' +result;
+
+    }
+
+
+
+</script>
+
+</body>
+</html>
